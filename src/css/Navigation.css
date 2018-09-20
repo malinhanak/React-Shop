@@ -5,12 +5,17 @@ nav {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background:gray;
+  background:#9BC2D5;
 }
 nav a {
   text-decoration:none;
   color:black;
   margin: 0 10px;
+}
+nav > a:first-of-type {
+  font-family: 'Montserrat', sans-serif;
+  font-weight:500;
+  font-size:16px;
 }
 .nav-extra{
   margin-left: 10px;

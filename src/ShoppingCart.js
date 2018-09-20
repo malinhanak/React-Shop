@@ -6,7 +6,7 @@ let cartContent = JSON.parse(localStorage.getItem("shoppingCart")) || [];
 class ShoppingCart extends Component {
   constructor(){
     super()
-    this.handleClick = this.handleClick.bind(this);
+    this.handleCheckout = this.handleCheckout.bind(this);
   }
   handleTotalAmount(amount, newAmount){
     amount = 0;
@@ -21,7 +21,7 @@ class ShoppingCart extends Component {
       return totalSum = totalAmountArray.reduce((total, amount) => total + amount);
     }
   }
-  handleClick(){
+  handleCheckout(){
     console.log('ORDER SENT!')
     localStorage.clear();
     window.location.reload()
@@ -63,7 +63,7 @@ class ShoppingCart extends Component {
             </article>
           </section>
           <section className="cart-checkout">
-            <button className="checkout-order" onClick={this.handleClick}>Checkout</button>
+            <button className="checkout-order" onClick={this.handleCheckout}>Checkout</button>
           </section>
         </section>
       </section>
