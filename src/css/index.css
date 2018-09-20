@@ -13,19 +13,25 @@ main {
   margin: 0 auto;
 }
 
-h4, h5, h6 {
+h3, h4, h5, h6 {
   font-family: 'Montserrat', sans-serif;
   font-weight:500;
   font-size:24px;
   margin: 0 0 5px 0;
 }
+h3 {
+  font-weight:700;
+}
 h5 {
-  font-size:19px;
+  font-size:18px;
   margin-top:20px;
 }
 h6 {
   font-size:16px;
   margin-top:10px;
+}
+h4 {
+  font-size:19px;
 }
 button {
   cursor: pointer;

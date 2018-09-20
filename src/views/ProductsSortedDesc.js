@@ -1,5 +1,6 @@
 import React from 'react';
 import { Query } from "react-apollo";
+import { Link } from 'react-router-dom';
 import { GET_PRODUCTS_SORT_DESC } from '../queries/ProductQuery';
 import '../css/index.css';
 
@@ -15,14 +16,14 @@ const ProductsSortedDesc = () => (
         } else {
             return (
               <section className="product-box" key={product.id}>
-                  <h4>{product.name}</h4>
+                <h4>{product.name}</h4>
                   <img src={product.img.url} alt={product.name}></img>
-                  <p><em>{product.personality}</em></p>
-                  <p>${product.price}</p>
-                  <article>
-                    <p>{product.stock}</p>
-                    <button type="submit">Add to Cart</button>
+                  <p>{product.personality}</p>
+                  <article className="product-details-box">
+                    <p><strong>Price:</strong> ${product.price}</p>
+                    <p><strong>Kittens:</strong> {product.stock}</p>
                   </article>
+                  <Link to={`/${product.slug}`}>Läs mer</Link>
               </section>
           )
         }

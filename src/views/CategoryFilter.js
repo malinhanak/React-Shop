@@ -15,14 +15,14 @@ const CategoryFilter = ({ data: { loading, error, products} }) => {
     } else {
         return (
           <section className="product-box" key={product.id}>
-            <Link to={`/${product.slug}`}><h4>{product.name}</h4></Link>
+            <h4>{product.name}</h4>
               <img src={product.img.url} alt={product.name}></img>
-              <p><em>{product.personality}</em></p>
-              <p>${product.price}</p>
-              <article>
-                <p>{product.stock}</p>
-                <button type="submit">Add to Cart</button>
+              <p>{product.personality}</p>
+              <article className="product-details-box">
+                <p><strong>Price:</strong> ${product.price}</p>
+                <p><strong>Kittens:</strong> {product.stock}</p>
               </article>
+              <Link to={`/${product.slug}`}>Läs mer</Link>
           </section>
       )
     }
