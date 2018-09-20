@@ -2,12 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import gql from 'graphql-tag';
 import { graphql } from 'react-apollo';
-import './css/index.css';
+import '../css/index.css';
 
 const CategoryFilter = ({ data: { loading, error, products} }) => {
   if (error) return <h1>Error fetching the post!</h1>;
   if (loading) return <p>Loading...</p>;
+    let catti;
   let productmap = products.map((product) => {
+    catti = product.category
     if(product.stock === 0){
       return null
     } else {
@@ -26,8 +28,11 @@ const CategoryFilter = ({ data: { loading, error, products} }) => {
     }
   });
   return (
-    <section className="product-section">
-    {productmap}
+    <section className="first-page">
+      <h3>Products filtered on {catti}</h3>
+        <section className="product-section">
+          {productmap}
+        </section>
     </section>
   )
 }

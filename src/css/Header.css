@@ -22,6 +22,10 @@ a {
 a span {
   margin-left:5px;
 }
+a:hover {
+  color:white;
+  text-decoration: none;
+}
 .headline {
   margin-left:30px;
   display:flex;

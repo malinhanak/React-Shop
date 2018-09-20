@@ -1,13 +1,13 @@
 import React from 'react';
 import { Query } from "react-apollo";
-import { GET_PRODUCTS_SORT_ASC } from './queries/ProductQuery';
-import './css/index.css';
+import { GET_PRODUCTS_SORT_DESC } from '../queries/ProductQuery';
+import '../css/index.css';
 
-const ProductsSortedAsc = () => (
-<Query query={GET_PRODUCTS_SORT_ASC}>
+const ProductsSortedDesc = () => (
+<Query query={GET_PRODUCTS_SORT_DESC}>
   {({ loading, error, data }) => {
     if (loading) return <p>Loading...</p>;
-    if (error) return <p>Error :</p>;
+    if (error) return <p>Error :(</p>;
 
       let productmap = data.products.map((product) => {
         if(product.stock === 0){
@@ -28,8 +28,11 @@ const ProductsSortedAsc = () => (
         }
       });
       return (
-        <section className="product-section">
-        {productmap}
+        <section className="first-page">
+          <h3>Product sorted on price highest to lowest</h3>
+            <section className="product-section">
+              {productmap}
+            </section>
         </section>
 
       )
@@ -37,4 +40,4 @@ const ProductsSortedAsc = () => (
 </Query>
 );
 
-export default ProductsSortedAsc;
+export default ProductsSortedDesc;

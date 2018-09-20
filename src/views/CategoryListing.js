@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Query } from "react-apollo";
-import { GET_CATEGORIES } from './queries/ProductQuery';
+import { GET_CATEGORIES } from '../queries/ProductQuery';
 
 const CategoryListing = () => (
 <Query query={GET_CATEGORIES}>
@@ -23,14 +23,18 @@ const CategoryListing = () => (
       }
       const mapCategory = li.map((cat, i) => {
         if(cat) {
-          return <Link key={cat.id} to={`/filter/${cat.categorySlug}`}>{cat.category}</Link>
+          return <Link key={cat.id} to={`/filter/${cat.categorySlug}`} className="dropdown-item">{cat.category}</Link>
         }
       })
 
     return (
-      <div className="nav-extra">
-        <p>Filter on Category:</p>
-        {mapCategory}
+      <div className="dropdown">
+        <div className="btn dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Filter Category
+        </div>
+        <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          {mapCategory}
+        </div>
       </div>
 
     )

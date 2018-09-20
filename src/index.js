@@ -3,28 +3,24 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import ApolloClient from "apollo-boost";
 import { ApolloProvider } from "react-apollo";
-import Products from './Products';
-import ProductsSortedDesc from './ProductsSortedDesc'
-import ProductsSortedAsc from './ProductsSortedAsc'
-import Header from './Header'
-import Navigation from './Navigation'
-import CategoryFilter from './CategoryFilter'
-import Product from './Product';
-import ShoppingCart from './ShoppingCart';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faAngleRight, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import Products from './views/Products';
+import ProductsSortedDesc from './views/ProductsSortedDesc'
+import ProductsSortedAsc from './views/ProductsSortedAsc'
+import Header from './views/Header'
+import Navigation from './views/Navigation'
+import CategoryFilter from './views/CategoryFilter'
+import Product from './views/Product';
+import ShoppingCart from './views/ShoppingCart';
 import './css/index.css';
 
 library.add(faAngleRight)
 library.add(faShoppingCart)
 
-
 const token = "https://api-euwest.graphcms.com/v1/cjlxlogvw33ys01f8ccdxx6il/master"
+const client = new ApolloClient({ uri: token });
 
-const client = new ApolloClient({
-  uri: token
-
-});
   const App = () => (
     <Router>
       <ApolloProvider client={client}>
