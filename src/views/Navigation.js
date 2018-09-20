@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import './css/Navigation.css';
 import CategoryListing from './CategoryListing';
-import BootstrapSort from './components/BootstrapSort'
+import BootstrapSort from '../components/BootstrapSort'
+import '../css/Navigation.css';
 
 class Navigation extends Component {
   render() {

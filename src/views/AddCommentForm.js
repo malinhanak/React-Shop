@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import './css/index.css';
 import { Mutation } from "react-apollo";
-import { CREATE_REVIEW } from './queries/mutations';
+import { CREATE_REVIEW } from '../queries/mutations';
+import '../css/index.css';
 
 class AddReviewForm extends Component {
   render() {
@@ -14,7 +14,7 @@ class AddReviewForm extends Component {
       <Mutation
         mutation={CREATE_REVIEW}>
         {(createReview, { data }) => (
-            <form onSubmit={e => {
+            <form className="add-review-form" onSubmit={e => {
               e.preventDefault();
               console.log(this.refs)
               createReview({
@@ -26,10 +26,13 @@ class AddReviewForm extends Component {
                   status: "PUBLISHED"
                 }
               });
+              window.location.reload()
             }}>
-              <input ref={this.review} placeholder="review"/>
-              <input ref={this.author} placeholder="author"/>
-              <input ref={this.rating} placeholder="rating"/>
+              <div className="form-author-rating">
+                <input ref={this.author} placeholder="author"/>
+                <input ref={this.rating} placeholder="rating"/>
+              </div>
+              <textarea ref={this.review} placeholder="review" rows="4" cols="48"></textarea>
               <button type="submit">Add Review</button>
             </form>
 

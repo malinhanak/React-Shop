@@ -1,17 +1,44 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: 'Roboto', sans-serif;
+  font-size:14px;
 }
 main {
   width:70%;
   display:flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
   margin: 0 auto;
 }
-main > .product-section {
+
+h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight:500;
+  font-size:24px;
+  margin: 0 0 5px 0;
+}
+h5 {
+  font-size:19px;
+  margin-top:20px;
+}
+h6 {
+  font-size:16px;
+  margin-top:10px;
+}
+
+/*  Products.js Component */
+main > .first-page {
+  width:100%;
+  display:flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-top:20px;
+}
+
+main > .first-page > .product-section {
   width:100%;
   display:flex;
   flex-direction: row;
@@ -22,7 +49,6 @@ main > .product-section {
 .product-box {
   margin:1rem 1rem;
   padding: 1rem 1rem;
-  width: 200px;
   background:#FFFDFD;
   box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.3);
   border-radius:5px 5px;
@@ -31,26 +57,151 @@ main > .product-section {
   justify-content: flex-start;
   align-items: center;
 }
+.product-box > p:first-of-type {
+  font-family: 'Kristi', cursive;
+  font-size:28px;
+  margin: 5px 0;
+}
+.product-details-box {
+  width:100%;
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.product-details-box p:first-of-type {
+  margin-left:10px;
+}
+.product-details-box p:last-of-type {
+  margin-right:10px;
+}
 .product-box > img {
   max-width:193px;
   height:auto;
   border: 1px solid lightgray;
 }
-.review-form {
+.product-box > a {
+  width:100%;
+  background:#417A96;
+  border:none;
+  outline:none!important;
+  border-radius:5px;
+  margin:12px auto 0 auto;
+  padding:5px 5px;
+  color:white;
+  text-align:center;
+}
+
+/*  Product.js Component */
+.product-page {
   display:flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
 }
-
-.review-form > h5 {
+.product-container {
+  display:flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.product-container img {
+  width:300px;
+  height:auto;
+  border-radius:5px;
+  border:1px solid lightgray;
+  margin-right:15px;
+}
+.product-details button {
+  width:50%;
+  background:#417A96;
+  border:none;
+  outline:none!important;
+  border-radius:5px;
+  margin-top:12px;
+  padding:10px 10px;
+  color:white;
+}
+.product-details {
+  display:flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.product-details p:first-of-type {
+  font-size:16px;
+}
+.product-details h5 ~ p {
+  border-bottom:1px solid lightgray;
+  width:50%;
+  padding:15px 15px;
+}
+.review-container {
+  display:flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-self: stretch;
+  background:#D5E1E8;
+  border:1px solid #A5BBCA;
+  border-radius:5px;
+  padding:15px 15px;
+  margin-top:50px;
+  margin-bottom:30px;
+}
+.review-container h5 {
+  margin: 0 0 5px 0;
+}
+.review-detail {
+  width:50%;
+  display:flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-bottom:10px;
+}
+.review-author-rating {
+  width:50%;
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  background:#C1D4E2;
+  border-bottom:1px solid #A5BBCA;
+  padding:5px;
+}
+.add-review-form {
+  display:flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.add-review-form > h5 {
   margin: 0 0 3px 0;
 }
-
-.review-form input, textarea {
+.add-review-form input, textarea {
   margin: 0 0 3px 0;
   padding:4px 4px;
   border-radius:5px;
   outline:none!important;
   border:1px solid lightgray;
+}
+.form-author-rating {
+  display:flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-bottom:12px;
+}
+.form-author-rating input:first-of-type {
+  margin-right:12px;
+}
+.add-review-form button {
+  background:#417A96;
+  border:none;
+  outline:none!important;
+  border-radius:5px;
+  margin-top:12px;
+  padding:10px 10px;
+  color:white;
 }

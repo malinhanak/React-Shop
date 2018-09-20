@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import './css/Cart.css';
+import '../css/Cart.css';
+
 let cartContent = JSON.parse(localStorage.getItem("shoppingCart")) || [];
+
 class ShoppingCart extends Component {
   constructor(){
     super()
@@ -28,11 +30,11 @@ class ShoppingCart extends Component {
   }
   render(){
     const cartStock = cartContent.length;
-    let showCart = cartContent.map((cartItem) => {
-      if(cartContent === []){
-        return <p>Cart is empty</p>
-      } else {
-        return (
+    const customerCart = cartContent ? cartContent : []
+    let showCart;
+      if (customerCart.length) {
+        showCart = customerCart.map((cartItem) => {
+          return (
             <article className="cart-item" key={cartItem.id}>
               <img src={cartItem.img} alt={cartItem.name}></img>
               <article className="cart-item-detail">
@@ -42,9 +44,11 @@ class ShoppingCart extends Component {
               <p className="item-price"><strong>Price:</strong> ${cartItem.price}</p>
               <Link to={`/${cartItem.slug}`}><FontAwesomeIcon icon="angle-right"  size="4x"/></Link>
             </article>
-        )
+          )
+        });
+      } else {
+        showCart = <div>Your cart is empty, go off and shop some cuteness!</div>;
       }
-    });
     return(
       <section className="main-cart">
         <h2>Shopping Cart</h2>

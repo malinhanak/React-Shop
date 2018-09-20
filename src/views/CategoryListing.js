@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Query } from "react-apollo";
-import { GET_CATEGORIES } from './queries/ProductQuery';
+import { GET_CATEGORIES } from '../queries/ProductQuery';
 
 const CategoryListing = () => (
 <Query query={GET_CATEGORIES}>
