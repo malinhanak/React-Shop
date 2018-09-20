@@ -6,7 +6,6 @@ let cartContent = JSON.parse(localStorage.getItem("shoppingCart")) || [];
 class ShoppingCart extends Component {
   constructor(){
     super()
-    console.log(cartContent)
     this.handleClick = this.handleClick.bind(this);
   }
   handleTotalAmount(amount, newAmount){
@@ -30,10 +29,8 @@ class ShoppingCart extends Component {
   render(){
     const cartStock = cartContent.length;
     let showCart = cartContent.map((cartItem) => {
-      if(cartContent.length === []){
-        return (
-                <p>Cart is empty</p>
-          )
+      if(cartContent === []){
+        return <p>Cart is empty</p>
       } else {
         return (
             <article className="cart-item" key={cartItem.id}>
