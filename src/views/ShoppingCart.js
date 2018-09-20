@@ -12,15 +12,14 @@ class ShoppingCart extends Component {
   }
   handleTotalAmount(amount, newAmount){
     amount = 0;
-    let totalAmountArray = [0,];
-    let totalSum = 0;
-    cartContent.forEach(function(price) {
+    let totalAmountArray = [0];
+    let totalSum = cartContent.forEach(function(price) {
       return totalAmountArray.push(price.price)
     });
     if(!cartContent){
       return null
     } else {
-      return totalSum = totalAmountArray.reduce((total, amount) => total + amount);
+      return totalAmountArray.reduce((total, amount) => total + amount);
     }
   }
   handleCheckout(){

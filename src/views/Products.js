@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { graphql } from 'react-apollo';
 import { Link } from 'react-router-dom';
-import AddReviewForm from './AddCommentForm';
 import { GET_PRODUCTS } from '../queries/ProductQuery';
 import '../css/index.css';
 
