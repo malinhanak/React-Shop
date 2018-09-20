@@ -9,20 +9,19 @@ const Products = () => (
   {({ loading, error, data }) => {
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error :</p>;
-      console.log(data.products)
       let productmap = data.products.map((product) => {
         if(product.stock === 0){
           return null
         } else {
             return (
               <section className="product-box" key={product.id}>
-                <Link to={`/product/${product.slug}`}><h4>{product.name}</h4></Link>
+                <h4>{product.name}</h4>
                   <img src={product.img.url} alt={product.name}></img>
                   <p><em>{product.personality}</em></p>
                   <p>${product.price}</p>
                   <article>
                     <p>{product.stock}</p>
-                    <button type="submit">Add to Cart</button>
+                    <Link to={`/${product.slug}`}><button>Läs mer och Köp</button></Link>
                   </article>
               </section>
           )

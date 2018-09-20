@@ -36,3 +36,21 @@ main > .product-section {
   height:auto;
   border: 1px solid lightgray;
 }
+.review-form {
+  display:flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.review-form > h5 {
+  margin: 0 0 3px 0;
+}
+
+.review-form input, textarea {
+  margin: 0 0 3px 0;
+  padding:4px 4px;
+  border-radius:5px;
+  outline:none!important;
+  border:1px solid lightgray;
+}

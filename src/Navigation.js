@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './css/Navigation.css';
+import CategoryListing from './CategoryListing';
 
 class Navigation extends Component {
-  // TODO: fix whatever is wrong with asc function.
   render() {
 
     return(
@@ -11,10 +11,7 @@ class Navigation extends Component {
         <Link to={`/`}>View Products</Link>
         <Link to={`/sortDESC`}>Sort Price Desc</Link>
         <Link to={`/sortASC`}>Sort Price Asc</Link>
-        <div className="nav-extra">
-          <p>Filter on Category:</p>
-          <p>coming soon..</p>
-        </div>
+        <CategoryListing/>
       </nav>
     )
   }

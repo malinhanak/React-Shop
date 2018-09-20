@@ -18,9 +18,7 @@ nav a {
   display:flex;
   flex-direction: row;
 }
-.nav-extra p:first-of-type{
+.nav-extra p {
   font-weight:bold;
-}
-.nav-extra p:last-of-type{
-  padding-left:5px;
+  margin:0;
 }
